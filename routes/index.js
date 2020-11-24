@@ -1,10 +1,6 @@
 const {Router} = require('express');
 var route = Router();
 
-route.get('/', async (req, res, next) => {
-    res.redirect('https://teamtritan.wtf')
-});
-
 route.get('/status', async (req, res, next) => {
     res.send({status:"alive"})
 });

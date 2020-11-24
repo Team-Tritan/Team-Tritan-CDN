@@ -6,7 +6,8 @@ route.get('/status', async (req, res, next) => {
 });
 
 route.get('*', async (req, res, next) => {
-    res.send({http_code:"403",content:"Access Denied","go_back":"https://teamtritan.wtf"})
+    res.render('codes/unauthorized')
+    //res.send({http_code:"403",content:"Access Denied","go_back":"https://teamtritan.wtf"})
 });
 
 module.exports = route;

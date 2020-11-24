@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const config = require('./config.json');
 const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
 const chalk = require("chalk");
@@ -18,8 +17,8 @@ app.use(express.static(__dirname + "/public"));
 
 (async () => {
     
-app.listen(process.env.PORT || 80, () => {
-        console.log(chalk.greenBright('[WEB STARTUP]'), `Web running on port ${config.port}.`);
+app.listen(process.env.PORT || 3000, () => {
+        console.log(chalk.greenBright('[WEB STARTUP]'), `Web running on port ${process.env.PORT || 3000}.`);
     })
 })();
 

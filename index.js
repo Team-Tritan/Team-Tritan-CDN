@@ -17,7 +17,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
 (async () => {
-app.listen(config.port, () => {
+    
+app.listen(config.port || 3000, () => {
         console.log(chalk.greenBright('[WEB STARTUP]'), `Web running on port ${config.port}.`);
     })
 })();

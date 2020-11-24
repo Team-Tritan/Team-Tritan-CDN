@@ -4,36 +4,27 @@ const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
 const chalk = require("chalk");
 var fs = require('fs');
-
-const {
-    Console
-} = require('console');
+const { Console } = require('console');
 var app = express();
-
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
 (async () => {
-    
 app.listen(process.env.PORT || 3000, () => {
-        console.log(chalk.greenBright('[WEB STARTUP]'), `Web running on port ${process.env.PORT || 3000}.`);
+        console.log(chalk.greenBright('[WEB STARTUP]'), `CDN running on port ${process.env.PORT || 3000}.`);
     })
 })();
 
 function loadRoutes() {
     const routesPath = path.join(__dirname, "./routes");
-
-
     fs.readdir(routesPath, (err, files) => {
         if (err) {
             throw err;
         }
-
         files.forEach(filename => {
             const route = require(path.join(routesPath, filename));
-
             const routePath = filename === "index.js" ? "/" : `/${filename.slice(0, -3)}`;
 
             try {
@@ -44,9 +35,7 @@ function loadRoutes() {
             }
         });
     });
-
     return this;
 }
 
 loadRoutes();
-

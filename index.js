@@ -18,7 +18,7 @@ app.use(express.static(__dirname + "/public"));
 
 (async () => {
     
-app.listen(config.port, () => {
+app.listen(process.env.PORT || 80, () => {
         console.log(chalk.greenBright('[WEB STARTUP]'), `Web running on port ${config.port}.`);
     })
 })();

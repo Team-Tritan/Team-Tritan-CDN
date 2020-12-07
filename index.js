@@ -3,6 +3,7 @@ const path = require('path');
 const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
 const chalk = require("chalk");
+const { port } = require("./config.js");
 var fs = require('fs');
 const { Console } = require('console');
 var app = express();
@@ -12,8 +13,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
 (async () => {
-app.listen(process.env.PORT || 3000, () => {
-        console.log(chalk.greenBright('[WEB STARTUP]'), `CDN running on port ${process.env.PORT || 3000}.`);
+app.listen(port, () => {
+        console.log(chalk.greenBright('[WEB STARTUP]'), `CDN running on port ${port}.`);
     })
 })();
 

@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  cdn:
+    container_name: Tritan-CDN
+    restart: always
+    build: .
+    network_mode: "host"

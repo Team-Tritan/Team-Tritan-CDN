@@ -1,5 +1,5 @@
 FROM node:14.15.5
-MAINTAINER Dylan James <dylan@tritanbot.xyz>
+MAINTAINER Dylan James <dylan@tritan.gg>
 
 WORKDIR /opt/cdn
 
